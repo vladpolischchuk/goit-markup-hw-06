@@ -1,0 +1,866 @@
+/* 
+    Кольори сайту: 
+        основний колір тексту - #757575;
+        другорядний колір тексту - #212121;
+        третій колір тексту - rgba(255, 255, 255, 0.6); 
+        білий колір (четвертий для тексту) - #FFFFFF;
+        колір для логотипу - #000000;
+
+        колір акценту - #2196F3;
+       
+        основний колір фону - #2F303A;
+        колір фону для секцій - #F5F4FA;
+
+        колір для ховера кнопки - #188CE8;
+
+        колір рамки для карток - #EEEEEE;
+
+        колір іконок - #AFB1B8;
+        фон іконок на фетрері - rgba(255, 255, 255, 0.1);
+
+    Ефект тіні:
+        колір тіні один - rgba(0, 0, 0, 0.2);
+        колір тіні два -  rgba(0, 0, 0, 0.14);
+        колір тіні три -  rgba(0, 0, 0, 0.12);
+
+    Жирність тексту:
+        regular - 400;
+        medium - 500;
+        bold - 700;
+        black - 900;
+
+    Розмір відступів:
+        обнулення - 0px;
+        мінусовий відступ для карток - (-15px);
+        додатній відступ для карток - 15px;
+
+    Анімація:
+        час переходу - 250ms;
+        функція розподілу часу - cubic-bezier(0.4, 0, 0.2, 1);
+*/
+
+:root {
+    /* Кольори тексту */
+    --primary-text-cl: #757575;
+    --title-text-cl: #212121;
+    --third-text-cl: rgba(255, 255, 255, 0.6);
+    --fourth-text-cl: #FFFFFF;
+    --logo-text-cl: #000000;
+
+    /* Кольори фону */
+    --accent-cl: #2196F3;
+
+    --main-background-cl: #2F303A;
+    --section-background-cl: #F5F4FA; 
+    --background-icon-footer: rgba(255, 255, 255, 0.1);
+
+    /* Кольори кнопок, карток та інших деталей */
+    --btn-hover-cl: #188CE8;
+ 
+    --cards-border-cl: #EEEEEE;
+
+    --icon-cl: #AFB1B8;
+
+    /* Тіні */
+    --shadows-one: rgba(0, 0, 0, 0.2);
+    --shadows-two: rgba(0, 0, 0, 0.14);
+    --shadows-three: rgba(0, 0, 0, 0.12);
+
+    /* Жирність тексту */
+    --regular-weight-text: 400;
+    --medium-weight-text: 500;
+    --bold-weight-text: 700;
+    --black-weight-text: 900;
+
+    /* Відступи */
+    --zeroing-indents: 0px;
+    --negative-card-indent: -15px;
+    --positive-card-indent: 15px;
+
+    /* Анімація */
+    --time-animation: 250ms;
+    --time-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-text-cl);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Утиліти */
+.img-nt-indent {
+    display: block;
+}
+
+/* Лінія під хеадером */
+.page-header {
+    border-bottom: 1px solid #ECECEC;
+}
+
+/* Контейнер для контенту */
+.container {
+    width: 1200px;
+
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Шапка сайту */
+.container.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: var(--accent-cl);
+
+    font-family: 'Raleway', sans-serif;;
+    font-weight: var(--bold-weight-text);
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+}
+
+.logo > .logo-black-color {
+    color: var(--logo-text-cl);
+}
+
+.navigation-list {
+    display: flex;
+
+    margin-top: var(--zeroing-indents);
+    margin-bottom: var(--zeroing-indents);
+    margin-left: 93px;
+    padding-left: var(--zeroing-indents);
+}
+
+.navigation-list > .item {
+    position: relative;
+}
+
+.navigation-list > .item + .item {
+    margin-left: 50px;
+}
+
+.navigation-list  .link {
+    display: inline-block;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    color: var(--title-text-cl);
+
+    font-weight: var(--medium-weight-text);
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    transition: color var(--time-animation) var(--time-function);
+}
+
+.navigation-list .link:hover,
+.navigation-list .link:focus {
+    color: var(--accent-cl);
+}
+
+.link.is-active {
+    color: var(--accent-cl);
+}
+
+.link.is-active::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+
+    border-radius: 2px;
+
+    width: 100%;
+    height: 4px;
+
+    background-color: var(--accent-cl);
+}
+
+.contact-list {
+    display: flex;
+
+    margin-left: auto; 
+    margin-top: var(--zeroing-indents);
+    margin-bottom: var(--zeroing-indents);
+    padding-left: var(--zeroing-indents);
+}
+
+.contact-list>.item+.item {
+    margin-left: 50px;
+}
+
+.contact-list .link {
+    display: inline-flex;
+    align-items: center;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.contact-list-style .link {
+    color: var(--primary-text-cl);
+    
+    font-weight: var(--medium-weight-text);
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+
+    transition: color var(--time-animation) var(--time-function);
+}
+
+.contact-list-style .link:hover,
+.contact-list-style .link:focus {
+    color: var(--accent-cl);
+}
+
+.icon-contact {
+    margin-right: 10px;
+
+    fill: currentColor;
+}
+
+/* Сторінка index.html */
+
+/* Розділ Герой */
+.hero {
+    background-color: var(--main-background-cl);
+    background-image: linear-gradient(to right, 
+                                    rgba(47, 48, 58, 0.4), 
+                                    rgba(47, 48, 58, 0.4)),
+                                    url(../images/hero/hero-background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    text-align: center;
+}
+
+.hero-title {
+    max-width: 650px;
+
+    margin-top: var(--zeroing-indents);
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+
+    color: var(--fourth-text-cl);
+
+    font-weight: var(--black-weight-text);
+    font-size: 44px;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.hero-btn {
+    min-width: 200px;
+
+    padding-top: 10px;
+    padding-right: 32px;
+    padding-bottom: 10px;
+    padding-left: 32px;
+
+    border: none;
+    border-radius: 4px;
+    
+    background-color: var(--accent-cl);
+    color: var(--fourth-text-cl);
+    
+    font-family: inherit;
+    font-weight: var(--bold-weight-text);
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    transition: background-color var(--time-animation) var(--time-function);
+}
+.hero-btn:hover {
+    background-color: var(--btn-hover-cl);
+    cursor: pointer;
+}
+
+/* Розділ особливостей */
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.title {
+    color: var(--title-text-cl);
+
+    margin-top: var(--zeroing-indents);
+    margin-bottom: var(--zeroing-indents);
+}
+
+.title.section-title {
+    margin-bottom: 50px;
+
+    font-size: 36px;
+    line-height: 1.16;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.features-list {
+    display: flex;
+
+    margin-top: var(--zeroing-indents);
+    margin-bottom: var(--zeroing-indents);
+    padding-left: var(--zeroing-indents);
+}
+
+.features-list > .item + .item {
+    margin-left: 30px;
+}
+
+.features-list .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 120px;
+
+    margin-bottom: 30px;
+    border-radius: 4px;
+
+    background-color: var(--section-background-cl);
+}
+
+.features-subtitle,
+.social-subtitle,
+.thumb-title {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.features-text {
+    margin-top: var(--zeroing-indents);
+    margin-bottom: var(--zeroing-indents);
+
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+}
+
+/* Розділ "Чем мы занимаемся" */
+.section.nt-top-padding-section {
+    padding-top: var(--zeroing-indents);
+}
+
+.portfolio-list {
+    display: flex;
+
+    margin-top: var(--negative-card-indent);
+    margin-right: var(--negative-card-indent);
+    margin-bottom: var(--negative-card-indent);
+    margin-left: var(--negative-card-indent);
+    padding-left: var(--zeroing-indents);
+}
+
+.portfolio-list > .item {
+    position: relative;
+
+    margin-top: var(--positive-card-indent);
+    margin-right: var(--positive-card-indent);
+    margin-bottom: var(--positive-card-indent);
+    margin-left: var(--positive-card-indent);
+}
+
+.portfolio-list .thumb {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding-top: 27px;
+    padding-bottom: 27px;
+
+    background-color: rgba(47, 48, 58, 0.8);
+    text-align: center;
+}
+
+.thumb-title {
+    color: var(--fourth-text-cl);
+    margin-bottom: var(--zeroing-indents);
+}
+
+/* Розділ "Наша команда" */
+.team-section {
+    background-color: var(--section-background-cl);
+}
+
+.team-list {
+    display: flex;
+
+    margin-top: var(--negative-card-indent);
+    margin-right: var(--negative-card-indent);
+    margin-bottom: var(--negative-card-indent);
+    margin-left: var(--negative-card-indent);
+    margin-top: var(--zeroing-indents);
+    margin-bottom: var(--zeroing-indents);
+    padding-left: var(--zeroing-indents);
+}
+
+.team-list > .item {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    
+    margin-top: var(--positive-card-indent);
+    margin-right: var(--positive-card-indent);
+    margin-bottom: var(--positive-card-indent);
+    margin-left: var(--positive-card-indent);
+
+    box-shadow: 0 2px 1px var(--shadows-one),
+                0 1px 1px var(--shadows-two),
+                0 1px 3px var(--shadows-three);
+}
+
+.team-article {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    padding-top: 30px;  
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+   
+    background-color: var(--fourth-text-cl);
+
+    text-align: center;
+}
+
+.team-subtitle,
+.team-text {
+    margin-top: var(--zeroing-indents);
+
+    line-height: 1.18;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.team-subtitle {
+    margin-bottom: 10px;
+
+    font-weight: var(--medium-weight-text);
+    font-size: 16px;
+}
+
+.team-text {
+    margin-bottom: 16px;
+}
+
+.social-list {
+    display: flex;
+    justify-content: center;
+
+    padding-left: var(--zeroing-indents);
+}
+
+.social-list .item+.item {
+    margin-left: 10px;
+}
+
+.social-list .link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    color: var(--icon-cl);
+
+    transition: background-color var(--time-animation) var(--time-function),
+                color var(--time-animation) var(--time-function);
+}
+
+.social-list .link:hover,
+.social-list .link:focus {
+    background-color: var(--accent-cl);
+    color: var(--fourth-text-cl);
+
+    outline: none;
+}
+
+.social-list .icon {
+    max-width: 20px;
+    max-height: 20px;
+
+    fill: currentColor;
+}
+
+/* Розділ "Постійні клієнтти" */
+
+.customers-list {
+    display: flex;
+
+    margin-top: var(--zeroing-indents);
+    margin-bottom: var(--zeroing-indents);
+    padding-left: var(--zeroing-indents);
+}
+
+.customers-list > .item {
+    width: calc((100%-120px)/5);
+    height: 92px;
+}
+
+.customers-list > .item + .item {
+    margin-left: 30px;
+}
+
+.customers-list .link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid var(--icon-cl);
+    border-radius: 4px;
+
+    color: var(--icon-cl);
+
+    transition: border-color var(--time-animation) var(--time-function),
+                color var(--time-animation) var(--time-function);
+}
+
+.customers-list .link:hover,
+.customers-list .link:focus {
+    color: var(--accent-cl);
+    border-color: var(--accent-cl);
+
+    outline: none;
+}
+
+.customers-list .icon {
+    width: 106px;
+    height: 60px;
+    
+    fill: currentColor;
+}
+
+/* Заключна частина всієї сторінки(footer) */
+.footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    background-color: var(--main-background-cl);
+}
+
+.container.wrapper {
+    display: flex;
+}
+
+.wrapper > div + div {
+    margin-left: 70px;
+}
+
+.footer .logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.logo > .logo-white-color {
+    color: var(--fourth-text-cl);
+}
+
+.address-link {
+    color: var(--fourth-text-cl);
+    
+    font-style: normal;
+    font-weight: var(--regular-weight-text);
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+
+    transition: color var(--time-animation) var(--time-function);
+}
+.address-link:hover {
+    color: var(--accent-cl);
+}
+
+.address-contact-list {
+    margin-top: var(--zeroing-indents);
+    margin-bottom: var(--zeroing-indents);
+    padding-left: var(--zeroing-indents);
+}
+
+.address-contact-list > .item + .item {
+    margin-top: 9px;
+}
+
+.address-contact-list .link {
+    color: var(--third-text-cl);
+    font-style: normal;
+}
+
+.social-networks {
+    margin-top: 12px;
+}
+
+.social-subtitle {
+    margin-bottom: 20px;
+
+    color: var(--fourth-text-cl);
+}
+
+.social-list .social-link-dark {
+    background-color: var(--background-icon-footer);
+    color: var(--fourth-text-cl);
+}
+
+/* Backdrop та модальне вікно */
+.backdrop {
+    position: fixed;
+    top: 0;
+    height: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--shadows-one);
+
+    opacity: 1;
+    transition: opacity var(--time-animation) var(--time-function),
+                visibility var(--time-animation) var(--time-function);
+}
+
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    min-width: 528px;
+    min-height: 521px;
+    border-radius: 4px;
+
+    background-color: var(--fourth-text-cl);
+
+    box-shadow: 0 2px 1px var(--shadows-one),
+                0 1px 1px var(--shadows-two),
+                0 1px 3px var(--shadows-three);
+
+    transition: transform var(--time-animation) var(--time-function);
+}
+
+.btn-exit {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: var(--fourth-text-cl);
+    cursor: pointer;
+
+    box-shadow: 0 2px 1px var(--shadows-one),
+                0 1px 1px var(--shadows-two),
+                0 1px 3px var(--shadows-three);
+
+    transition: fill var(--time-animation) var(--time-function);
+}
+
+.btn-exit:hover {
+    fill: var(--accent-cl);
+}
+
+/* Cторінка portfolio.html */
+.filters-list {
+    display: flex;
+    justify-content: center;
+
+    margin-top: var(--zeroing-indents);
+    margin-bottom: 50px;
+    padding-left: var(--zeroing-indents);
+}
+
+.filters-list > .item + .item {
+    margin-left: 8px;
+}
+
+.filters-btn {
+    padding-top: 6px;
+    padding-right: 22px;
+    padding-bottom: 6px;
+    padding-left: 22px;
+
+    border: none;
+    border-radius: 4px;
+
+    background-color: var(--section-background-cl);
+    color: var(--title-text-cl);
+
+    font-family: inherit;
+    font-weight: var(--medium-weight-text);
+    font-size: 16px;
+    line-height: 1.62;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    transition: color var(--time-animation) var(--time-function),
+                background-color var(--time-animation) var(--time-function),
+                box-shadow var(--time-animation) var(--time-function);
+}
+.filters-btn:hover,
+.filters-btn:focus {
+    color: var(--fourth-text-cl);
+    background-color: var(--accent-cl);
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1),
+                0 1px 2px rgba(0, 0, 0, 0.08),
+                0 2px 2px var(--shadows-three);
+}
+.filters-btn.btn-color {
+    color: var(--fourth-text-cl);
+    background-color: var(--accent-cl);
+
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1),
+                0 1px 2px rgba(0, 0, 0, 0.08),
+                0 2px 2px var(--shadows-three);
+}
+
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: var(--negative-card-indent);
+    margin-right: var(--negative-card-indent);
+    margin-bottom: var(--negative-card-indent);
+    margin-left: var(--negative-card-indent);
+    padding-left: var(--zeroing-indents);
+}
+
+.cards-list > .item {
+    margin-top: var(--positive-card-indent);
+    margin-right: var(--positive-card-indent);
+    margin-bottom: var(--positive-card-indent);
+    margin-left: var(--positive-card-indent);
+}
+
+.cards-list .card-link {
+    display: block;
+
+    transition: box-shadow var(--time-animation) var(--time-function);
+}
+
+.cards-list .card-link:hover,
+.cards-list .card-link:focus {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16),
+                0 4px 4px rgba(0, 0, 0, 0.06),
+                0 1px 1px var(--shadows-three);
+
+    outline: none;
+}
+
+.cards-list .thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(101%);
+
+    padding-top: 63px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-bottom: 63px;
+
+    background-color: var(--accent-cl);
+    opacity: 0.9;
+
+    transition: transform var(--time-animation) var(--time-function);
+}
+
+.card-link:hover .card-description {
+    transform: translateY(0);
+}
+
+.description {
+    margin: var(--zeroing-indents);
+
+    color: var(--fourth-text-cl);
+
+    font-size: 18px; 
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+}
+
+.item-article {
+    padding-top: 20px;
+    padding-right: 24px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+
+    border-right: 1px solid var(--cards-border-cl);
+    border-bottom: 1px solid var(--cards-border-cl);
+    border-left: 1px solid var(--cards-border-cl);
+
+    color: var(--primary-text-cl);
+}
+
+.portfolio-subtitle {
+    margin-bottom: 4px;
+
+    font-weight: var(--bold-weight-text);
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+}
+
+.portfolio-text {
+    margin-top: var(--zeroing-indents);
+    margin-bottom: var(--zeroing-indents);
+
+    line-height: 1.87;
+    letter-spacing: 0.03em;
+}
