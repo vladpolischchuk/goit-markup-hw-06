@@ -15,6 +15,8 @@
 
         колір рамки для карток - #EEEEEE;
 
+        колір рамки для інпуту - rgba(33, 33, 33, 0.2);
+
         колір іконок - #AFB1B8;
         фон іконок на фетрері - rgba(255, 255, 255, 0.1);
 
@@ -58,6 +60,8 @@
     --btn-hover-cl: #188CE8;
  
     --cards-border-cl: #EEEEEE;
+
+    --input-border-cl: rgba(33, 33, 33, 0.2);
 
     --icon-cl: #AFB1B8;
 
@@ -270,7 +274,7 @@ ul {
     text-transform: uppercase;
 }
 
-.hero-btn {
+.button {
     min-width: 200px;
 
     padding-top: 10px;
@@ -294,7 +298,7 @@ ul {
 
     transition: background-color var(--time-animation) var(--time-function);
 }
-.hero-btn:hover {
+.button:hover {
     background-color: var(--btn-hover-cl);
     cursor: pointer;
 }
@@ -348,7 +352,7 @@ ul {
 }
 
 .features-subtitle,
-.social-subtitle,
+.footer-subtitle,
 .thumb-title {
     margin-bottom: 10px;
 
@@ -627,7 +631,7 @@ ul {
     margin-top: 12px;
 }
 
-.social-subtitle {
+.footer-subtitle {
     margin-bottom: 20px;
 
     color: var(--fourth-text-cl);
@@ -636,6 +640,48 @@ ul {
 .social-list .social-link-dark {
     background-color: var(--background-icon-footer);
     color: var(--fourth-text-cl);
+}
+
+.container.wrapper > .form-subscription {
+    margin-top: 12px;
+    margin-left: auto;
+}
+
+.form-input {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 16px;
+
+    width: 358px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+
+    color: var(--third-text-cl);
+    background-color: transparent;
+
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+
+    transition: border-color var(--time-animation) var(--time-function);
+}
+
+.form-input:hover,
+.form-input:focus {
+    border-color: var(--accent-cl);
+    outline: none;
+}
+
+.form-btn {
+    display: inline-flex;
+    margin-left: 12px;
+}
+
+.form-icon {
+    margin-top: 3px;
+    margin-left: 10px;
+
+    fill: currentColor;
 }
 
 /* Backdrop та модальне вікно */
@@ -671,7 +717,6 @@ ul {
     transform: translate(-50%, -50%) scale(1);
 
     min-width: 528px;
-    min-height: 521px;
     border-radius: 4px;
 
     background-color: var(--fourth-text-cl);
@@ -707,6 +752,156 @@ ul {
 
 .btn-exit:hover {
     fill: var(--accent-cl);
+}
+
+.modal-form {
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+}
+
+.modal-title {
+    margin-bottom: 12px;
+
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+.modal-label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+}
+
+.modal-label + .modal-label {
+    margin-top: 10px;
+}
+
+.modal-input {
+    margin-top: 4px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 42px;
+
+    width: 100%;
+
+    border: 1px solid var(--input-border-cl);
+    border-radius: 4px;
+
+    background-color: transparent;
+    color: var(--title-text-cl);
+
+    transition: border-color var(--time-animation) var(--time-function);
+}
+
+.modal-icon {
+    position: absolute;
+    top: 24px;
+    left: 11px;
+}
+
+.modal-coment {
+    margin-top: 4px;
+    margin-bottom: 20px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+
+    width: 100%;
+
+    border: 1px solid var(--input-border-cl);
+    border-radius: 4px;
+    
+    background-color: transparent;
+    color: var(--title-text-cl);
+
+    resize: none;
+    transition: border-color var(--time-animation) var(--time-function);
+}
+
+.modal-coment::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-input:hover,
+.modal-input:focus,
+.modal-coment:hover,
+.modal-coment:focus {
+    border-color: var(--accent-cl);
+    outline: none;
+}
+
+.modal-checked {
+    text-align: center;
+}
+
+.modal-checkbox {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+}
+
+.checkbox-input {
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+
+    width: 1px;
+    height: 1px;
+
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.checkbox-icon {
+    display: inline-block;
+    margin-right: 7px;
+
+    width: 16px;
+    height: 15px;
+
+    border: 2px solid var(--title-text-cl);
+    border-radius: 3px;
+
+    transition: border-color var(--time-animation) var(--time-function),
+                background-color var(--time-animation) var(--time-function),
+                background-image var(--time-animation) var(--time-function);
+}
+
+.checkbox-input:checked + .checkbox-icon {
+    border-color: var(--accent-cl);
+    background-color: var(--accent-cl);
+    background-image: url(../images/sprits/modal-window/icon-check.svg);
+    background-size: contain;
+    background-origin: border-box;
+}
+
+.modal-link {
+    margin-left: 5px;
+
+    color: var(--accent-cl);
+    text-decoration: underline;
+
+    transition: color var(--time-animation) var(--time-function);
+}
+
+.modal-link:hover,
+.modal-link:focus {
+    color: var(--btn-hover-cl);
 }
 
 /* Cторінка portfolio.html */
