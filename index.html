@@ -7,13 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WebStudio</title>
 
+  <!-- Шрифти -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
     rel="stylesheet">
 
+  <!-- Normalize -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css">
 
+  <!-- Стилі CSS -->
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -57,10 +60,11 @@
     </div>
   </header>
 
-  <!-- Унікальний(main) вміст сторінки -->
+  <!-- Унікальний вміст сторінки -->
   <main>
     <!-- Розділ Герой -->
     <section class="hero">
+
       <div class="container">
         <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
         <button class="button" data-modal-open type="button">Заказать услугу</button>
@@ -72,6 +76,7 @@
       <div class="container">
         <h2 class="title section-title" hidden>Особенности</h2>
 
+        <!-- Список особливостей -->
         <ul class="features-list">
           <li class="item">
             <div class="wrapper">
@@ -118,10 +123,12 @@
       </div>
     </section>
 
-    <!-- Розділ "Чем мы занимаемся" -->
+    <!-- Розділ "Ми робимо" -->
     <section class="section nt-top-padding-section">
       <div class="container">
         <h2 class="title section-title">Чем мы занимаемся</h2>
+
+        <!-- Список того що ми робимо -->
         <ul class="portfolio-list">
           <li class="item">
             <img class="img-nt-indent" src="./images/we-do/codings.jpg" alt="Десктопные приложения" width="370"
@@ -152,6 +159,8 @@
     <section class="section team-section">
       <div class="container">
         <h2 class="title section-title">Наша команда</h2>
+
+        <!-- Список нашої команди -->
         <ul class="team-list">
           <li class="item">
             <img class="img-nt-indent" src="./images/team/igor.jpg" alt="Игорь Демьяненко - Product Designer"
@@ -160,7 +169,7 @@
               <h3 class="title team-subtitle">Игорь Демьяненко</h3>
               <p class="team-text" lang="en">Product Designer</p>
 
-              <!-- Соціальні мережі -->
+              <!-- Соціальні мережі члена нашої команди -->
               <ul class="social-list">
                 <li class="item">
                   <a class="link" href="#" aria-label="instagram">
@@ -202,7 +211,7 @@
               <h3 class="title team-subtitle">Ольга Репина</h3>
               <p class="team-text" lang="en">Frontend Developer</p>
 
-              <!-- Соціальні мережі -->
+              <!-- Соціальні мережі члена нашої команди -->
               <ul class="social-list">
                 <li class="item">
                   <a class="link" href="#" aria-label="instagram">
@@ -244,7 +253,7 @@
               <h3 class="title team-subtitle">Николай Тарасов</h3>
               <p class="team-text" lang="en">Marketingr</p>
 
-              <!-- Соціальні мережі -->
+              <!-- Соціальні мережі члена нашої команди -->
               <ul class="social-list">
                 <li class="item">
                   <a class="link" href="#" aria-label="instagram">
@@ -286,7 +295,7 @@
               <h3 class="title team-subtitle">Михаил Ермаков</h3>
               <p class="team-text" lang="en">UI Designer</p>
 
-              <!-- Соціальні мережі -->
+              <!-- Соціальні мережі члена нашої команди -->
               <ul class="social-list">
                 <li class="item">
                   <a class="link" href="#" aria-label="instagram">
@@ -379,7 +388,7 @@
     </section>
   </main>
 
-  <!-- Заключна частина всієї сторінки(footer) -->
+  <!-- Заключна частина всієї сторінки -->
   <footer class="footer">
 
     <div class="container wrapper">
@@ -411,11 +420,11 @@
         </address>
       </div>
 
-      <!-- Соціальні мережі -->
+      <!-- Соціальні мережі студії -->
       <div class="social-networks">
         <h3 class="title footer-subtitle">присоединяйтесь</h3>
 
-        <!-- Список -->
+        <!-- Список соціальних мереж -->
         <ul class="social-list">
 
           <li class="item">
@@ -453,7 +462,7 @@
         </ul>
       </div>
 
-      <!-- Форма підписки -->
+      <!-- Форма підписки на розсилку -->
       <form class="form-subscription">
         <h3 class="title footer-subtitle">Подпишитесь на рассылку</h3>
 
@@ -482,14 +491,15 @@
         </svg>
       </button>
 
-      <!-- Форма "Заказать услугу" -->
+      <!-- Форма замовлення послуги -->
       <form class="modal-form">
         <h3 class="title modal-title">Оставьте свои данные, мы вам перезвоним</h3>
 
+        <!-- Дані замовника -->
         <label class="modal-label">
           Имя
           <input class="modal-input" type="text" name="name">
-          <svg class="modal-icon" width="24" height="24">
+          <svg class="modal-icon" width="18" height="18">
             <use href="./images/sprits/modal-window/icons.svg#icon-person"></use>
           </svg>
         </label>
@@ -497,7 +507,7 @@
         <label class="modal-label">
           Телефон
           <input class="modal-input" type="text" name="tel">
-          <svg class="modal-icon" width="24" height="24">
+          <svg class="modal-icon" width="18" height="18">
             <use href="./images/sprits/modal-window/icons.svg#icon-phone"></use>
           </svg>
         </label>
@@ -505,16 +515,18 @@
         <label class="modal-label">
           Почта
           <input class="modal-input" type="text" name="email">
-          <svg class="modal-icon" width="24" height="24">
+          <svg class="modal-icon" width="18" height="18">
             <use href="./images/sprits/modal-window/icons.svg#icon-email"></use>
           </svg>
         </label>
 
+        <!-- Коментар,побажання замвоника -->
         <label class="modal-label">
           Комментарий
           <textarea class="modal-coment" name="coment" rows="5" placeholder="Введите текст"></textarea>
         </label>
 
+        <!-- Політика приватності(чекбокс) -->
         <div class="modal-checked">
 
           <label class="modal-checkbox">
@@ -526,6 +538,7 @@
             </a>
           </label>
 
+          <!-- Кнопка відправки форми -->
           <button class="button" type="submit">Отправить</button>
         </div>
 

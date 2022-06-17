@@ -678,7 +678,7 @@ ul {
     fill: currentColor;
 }
 
-/* Backdrop та модальне вікно */
+/* Backdrop */
 .backdrop {
     position: fixed;
     top: 0;
@@ -704,6 +704,7 @@ ul {
     transform: translate(-50%, -50%) scale(1.2);
 }
 
+/* Модальне вікно */
 .modal {
     position: absolute;
     top: 50%;
@@ -748,6 +749,7 @@ ul {
     fill: var(--accent-cl);
 }
 
+/* Форма замовити послугу */
 .modal-form {
     padding-top: 40px;
     padding-right: 40px;
@@ -797,8 +799,15 @@ ul {
 
 .modal-icon {
     position: absolute;
-    top: 24px;
+    top: 27px;
     left: 11px;
+
+    transition: fill var(--time-animation) var(--time-function);
+}
+
+.modal-input:hover+.modal-icon,
+.modal-input:focus+.modal-icon {
+    fill: var(--accent-cl);
 }
 
 .modal-coment {
@@ -835,6 +844,7 @@ ul {
 
 .modal-checked {
     text-align: center;
+    padding-left: 12px;
 }
 
 .modal-checkbox {
