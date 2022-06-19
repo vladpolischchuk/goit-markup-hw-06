@@ -37,6 +37,9 @@
     Анімація:
         час переходу - 250ms;
         функція розподілу часу - cubic-bezier(0.4, 0, 0.2, 1);
+    
+    Інше:
+        кількість карточок в ряд - 3;
 */
 
 :root {
@@ -79,6 +82,9 @@
     /* Анімація */
     --time-animation: 250ms;
     --time-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Інше */
+    --number-cards: 3;
 }
 
 .page-body {
@@ -903,20 +909,20 @@
 }
 
 /* Cторінка portfolio.html */
-.filters-list {
+.filters__list {
     display: flex;
     justify-content: center;
-
-    margin-top: var(--zeroing-indents);
-    margin-bottom: 50px;
-    padding-left: var(--zeroing-indents);
 }
 
-.filters-list > .item + .item {
+.section__filters {
+    margin-bottom: 50px;
+}
+
+.filters__item:nth-child(n+2) {
     margin-left: 8px;
 }
 
-.filters-btn {
+.filters__btn {
     padding-top: 6px;
     padding-right: 22px;
     padding-bottom: 6px;
@@ -939,8 +945,8 @@
                 background-color var(--time-animation) var(--time-function),
                 box-shadow var(--time-animation) var(--time-function);
 }
-.filters-btn:hover,
-.filters-btn:focus {
+.filters__btn:hover,
+.filters__btn:focus {
     color: var(--white-cl);
     background-color: var(--accent-cl);
 
@@ -950,7 +956,7 @@
                 0 1px 2px rgba(0, 0, 0, 0.08),
                 0 2px 2px var(--shadows-three);
 }
-.filters-btn.btn-color {
+.filters__btn--active {
     color: var(--white-cl);
     background-color: var(--accent-cl);
 
@@ -959,32 +965,35 @@
                 0 2px 2px var(--shadows-three);
 }
 
-.cards-list {
+.grid {
     display: flex;
     flex-wrap: wrap;
+}
 
+.section__grid {
     margin-top: var(--negative-card-indent);
     margin-right: var(--negative-card-indent);
     margin-bottom: var(--negative-card-indent);
     margin-left: var(--negative-card-indent);
-    padding-left: var(--zeroing-indents);
 }
 
-.cards-list > .item {
+.grid__item{
+    flex-basis: calc((100% - (30px * var(--number-cards))) / var(--number-cards));
+    
     margin-top: var(--positive-card-indent);
     margin-right: var(--positive-card-indent);
     margin-bottom: var(--positive-card-indent);
     margin-left: var(--positive-card-indent);
 }
 
-.cards-list .card-link {
+.product__link{
     display: block;
 
     transition: box-shadow var(--time-animation) var(--time-function);
 }
 
-.cards-list .card-link:hover,
-.cards-list .card-link:focus {
+.product__link:hover,
+.product__link:focus {
     box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16),
                 0 4px 4px rgba(0, 0, 0, 0.06),
                 0 1px 1px var(--shadows-three);
@@ -992,16 +1001,16 @@
     outline: none;
 }
 
-.cards-list .thumb {
+.product__thumb {
     position: relative;
     overflow: hidden;
 }
 
-.card-description {
+.product__group{
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(101%);
+    transform: translateY(100%);
 
     padding-top: 63px;
     padding-right: 24px;
@@ -1014,11 +1023,11 @@
     transition: transform var(--time-animation) var(--time-function);
 }
 
-.card-link:hover .card-description {
+.product__link:hover .product__group {
     transform: translateY(0);
 }
 
-.description {
+.product__description {
     margin: var(--zeroing-indents);
 
     color: var(--white-cl);
@@ -1028,7 +1037,7 @@
     letter-spacing: 0.03em;
 }
 
-.item-article {
+.product__header{
     padding-top: 20px;
     padding-right: 24px;
     padding-bottom: 20px;
@@ -1041,16 +1050,15 @@
     color: var(--primary-cl-txt);
 }
 
-.portfolio-subtitle {
+.product__title {
     margin-bottom: 4px;
 
-    font-weight: var(--bold-weight-txt);
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
 }
 
-.portfolio-text {
+.product__subtitle {
     margin-top: var(--zeroing-indents);
     margin-bottom: var(--zeroing-indents);
 
